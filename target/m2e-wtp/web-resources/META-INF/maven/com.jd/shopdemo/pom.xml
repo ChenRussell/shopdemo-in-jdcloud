@@ -5,7 +5,21 @@
 	<artifactId>shopdemo</artifactId>
 	<version>0.0.1</version>
 	<packaging>war</packaging>
-    <dependencies>
+	<properties>
+	  <!-- spring版本号 -->  
+    <spring.version>4.0.2.RELEASE</spring.version>
+    <!-- mybatis版本号 -->  
+    <mybatis.version>3.2.6</mybatis.version>  
+    </properties>
+	<dependencies>
+		
+	<dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+   
+    
    
     <dependency>
         <groupId>org.springframework.data</groupId>
