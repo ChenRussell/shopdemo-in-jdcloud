@@ -15,11 +15,9 @@ public interface UserDao extends JpaRepository<User, Integer>{
 	@Transactional
 	@Modifying
 	@Query("update User set password = ?1 where username = ?2")
-	public boolean jupdateUser(String password,String username);
+	public int jupdateUser(String password,String username);
 	
 	//判断用户是否存在
-	@Transactional
-	@Modifying
 	@Query("select username from User where username = ?1")
 	public String jisExist(String username);
 }
