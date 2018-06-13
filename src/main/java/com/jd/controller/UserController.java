@@ -1,7 +1,8 @@
 package com.jd.controller;
 
-<<<<<<< HEAD
+
 import java.util.HashMap;
+
 import java.util.Map;
 
 import org.springframework.stereotype.Controller;
@@ -11,27 +12,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-=======
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.jd.exception.CustomException;
-
-@Controller
-@RequestMapping("/user")
-public class UserController {
-	
-	@RequestMapping("/test")
-	public void test(String name) {
-		if(name==null) {
-			throw new CustomException("E881","name can not be null!!!");
-		}else {
-			throw new RuntimeException("a runtime exception!!!");
-		}
-	}
->>>>>>> 2d95b5c5f2f328b3f83c4775c35832c4a143d243
-
-import com.jd.domain.User;
 
 @Controller
 @RequestMapping("/user")
@@ -80,7 +60,7 @@ public class UserController {
 		if(br.hasErrors()){
 			return "user/update";
 		}
-		String uid = String.valueOf(user.getId());
+		String uid = String.valueOf(user.getUserid());
 		users.put(uid, user);
 		return "redirect:/user/users";
 	}
@@ -91,7 +71,5 @@ public class UserController {
 		users.remove(uid);
 		return "redirect:/user/users";
 	}
-	
-	
 	
 }
