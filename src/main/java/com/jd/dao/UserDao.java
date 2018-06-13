@@ -20,6 +20,6 @@ public interface UserDao extends JpaRepository<User, Integer>{
 	//判断用户是否存在
 	@Transactional
 	@Modifying
-	@Query("select username where username = ?1")
+	@Query("select username from User where username = ?1")
 	public String jisExist(String username);
 }
