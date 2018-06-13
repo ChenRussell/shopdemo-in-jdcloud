@@ -4,7 +4,7 @@
 	 	<resultMap id="baseResultMap" type="com.jd.domain.Order" >
 		<id column="orderid" property="orderId" jdbcType="INTEGER" />
 		<result column="ordernum" property="orderNum" jdbcType="VARCHAR" />
-		<result column="ordertime" property="time" jdbcType="DATETIME" />
+		<result column="ordertime" property="time" jdbcType="DATE" />
 		<result column="producttime" property="product" jdbcType="VARCHAR" />
 		<result column="remark" property="remark" jdbcType="VARCHAR" />
 		<result column="user_id" property="userId" jdbcType="INTEGER" />

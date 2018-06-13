@@ -6,25 +6,25 @@ public class Order {
 	private int orderId;
 	private String orderNum;
 	private Date time;
-	private String produce;
+	private String product;
 	private String remark;
-	private int userid;
+	private int userId;
 	
-	public Order(int orderId, String orderNum, Date time, String produce, String remark, int userid) {
+	public Order(int orderId, String orderNum, Date time, String product, String remark, int userId) {
 		this.orderId = orderId;
 		this.orderNum = orderNum;
 		this.time = time;
-		this.produce = produce;
+		this.product = product;
 		this.remark = remark;
-		this.userid = userid;
+		this.userId = userId;
 	}
 	
-	public Order(String orderNum, Date time, String produce, String remark, int userid) {
+	public Order(String orderNum, Date time, String product, String remark, int userId) {
 		this.orderNum = orderNum;
 		this.time = time;
-		this.produce = produce;
+		this.product = product;
 		this.remark = remark;
-		this.userid = userid;
+		this.userId = userId;
 	}
 	
 	
@@ -46,11 +46,11 @@ public class Order {
 	public void setTime(Date time) {
 		this.time = time;
 	}
-	public String getProduce() {
-		return produce;
+	public String getProduct() {
+		return product;
 	}
 	public void setProduce(String produce) {
-		this.produce = produce;
+		this.product = produce;
 	}
 	public String getRemark() {
 		return remark;
@@ -58,10 +58,10 @@ public class Order {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-	public int getUserid() {
-		return userid;
+	public int getUserId() {
+		return userId;
 	}
-	public void setUserid(int userid) {
-		this.userid = userid;
+	public void setUserid(int userId) {
+		this.userId = userId;
 	}
 }
