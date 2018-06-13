@@ -26,11 +26,11 @@
 		select * from s_order
 	</select>
 	
-	<select id="queryByOrderId" parameterType="int">
+	<select id="queryByOrderId" parameterType="int" resultMap="baseResultMap">
 		select * from s_order where orderid=#{orderId}
 	</select>
 	
-	<select id="queryByUserId" parameterType="int">
+	<select id="queryByUserId" parameterType="int" resultMap="baseResultMap">
 		select * from s_order where user_id=#{userId}
 	</select>
 
