@@ -10,6 +10,8 @@ public class Order {
 	private String remark;
 	private int userId;
 	
+	public Order() {}
+	
 	public Order(int orderId, String orderNum, Date time, String product, String remark, int userId) {
 		this.orderId = orderId;
 		this.orderNum = orderNum;
@@ -64,4 +66,12 @@ public class Order {
 	public void setUserid(int userId) {
 		this.userId = userId;
 	}
+
+	@Override
+	public String toString() {
+		return "Order [orderId=" + orderId + ", orderNum=" + orderNum + ", time=" + time + ", product=" + product
+				+ ", remark=" + remark + ", userId=" + userId + "]";
+	}
+	
+	
 }

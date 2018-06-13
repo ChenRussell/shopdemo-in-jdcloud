@@ -22,7 +22,7 @@
 		delete from s_order where orderid=#{orderId}
 	</delete>
 	
-	<select id="queryAll">
+	<select id="queryAll" resultMap="baseResultMap">
 		select * from s_order
 	</select>
 	

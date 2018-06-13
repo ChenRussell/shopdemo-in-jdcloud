@@ -75,6 +75,6 @@
    <!-- 根据事务注解来生成事务代理 -->
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
-
+	<context:component-scan base-package="com.jd.service;com.jd.service.serviceImpl" />
 </beans>
 
