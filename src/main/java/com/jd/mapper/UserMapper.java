@@ -3,7 +3,7 @@ package com.jd.mapper;
 import com.jd.domain.User;
 
 public interface UserMapper {
-	//添加用户
+	    //添加用户
 		public boolean addUser(User user);
 		
 		//更新用户密码

@@ -1,30 +1,14 @@
 package shopdemo;
 
 import java.io.IOException;
-import java.io.Reader;
-
-import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.jd.domain.User;
 import com.jd.mapper.UserMapper;
 
 public class MUserTest {
-	private static SqlSessionFactory factory;
-	static{
-	   String resource = "spring.xml";
-	   Reader reader = null;
-	   try{
-		   reader = Resources.getResourceAsReader(resource);
-		   }catch(IOException e)
-		   {
-		   e.printStackTrace();
-		   }
-	   factory  = new SqlSessionFactoryBuilder().build(reader);
-	}
-	
+	private static SqlSessionFactory factory=SqlSessionFactoryGen.getSqlSessionFactory();
 	public static void main(String[] args)
 	{
 		add();
