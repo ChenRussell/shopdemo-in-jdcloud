@@ -23,10 +23,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	</tr>
     	<c:forEach items="${users}" var="u">
     		<tr>
-    			<td>${u.value.id}</td>
-    			<td><a href="user/${u.value.id}/show">${u.value.username}</a></td>
+    			<td>${u.value.userid}</td>
+    			<td><a href="user/${u.value.userid}/show">${u.value.username}</a></td>
     			<td>${u.value.password}</td>
-    			<td><a href="user/${u.value.id}/update">更新</a>&nbsp;<a href="user/${u.value.id}/delete">删除</a></td>
+    			<td><a href="user/${u.value.userid}/update">更新</a>&nbsp;<a href="user/${u.value.userid}/delete">删除</a></td>
     		</tr>
     	</c:forEach>
     </table> 
