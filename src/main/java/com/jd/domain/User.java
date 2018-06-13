@@ -1,6 +1,13 @@
 package com.jd.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="s_user")
 public class User {
+	@Id
 	private int userid;
 	private String username;
 	private String password;
