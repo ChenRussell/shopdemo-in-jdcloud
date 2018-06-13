@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/src/main/java/com/jd/controller/User.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/jd/dao/UserDao.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/jd/domain/User.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/jd/mapper/OrderMapper.java" charset="GBK" />
   </component>
 </project>

@@ -11,13 +11,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <title>用户列表</title>
 
-	  <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+	  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   </head>
   
   <body>
   <div class="container">
-    <a href="user/add">添加用户</a>
-    <table class="table" width="700" align="center" border="1">
+    <a href="user/add" class="btn btn-primary" style="margin-top: 10px">添加用户</a>
+    <table class="table table-striped" align="center" border="1" style="margin-top: 10px">
     	<tr>
     		<td>用户标识</td>
     		<td>用户名</td>

@@ -10,23 +10,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>用户更新</title>
+	  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   </head>
   
   <body>
-  	<sf:form method="post" modelAttribute="user">
-	    <table width="700" align="center" border="1">
-	    	<tr>
-	    		<td>用户名：</td><td>${user.username}<sf:hidden path="username"/></td>
-	    	</tr>
-	    	<tr>
-	    		<td>用户密码：</td><td><sf:password path="password"/><sf:errors path="password"/></td>
-	    	</tr>
-	    	<tr>
-	    		<td colspan="2">
-	    			<input type="submit" value="用户更新">
-	    		</td>
-	    	</tr>
-	    </table>
-    </sf:form> 
+	  <div class="container" align="center">
+		<sf:form method="post" modelAttribute="user">
+			<table width="700" align="center" border="1" class="table">
+				<tr>
+					<td>用户名：</td><td>${user.username}<sf:hidden path="username"/></td>
+				</tr>
+				<tr>
+					<td>用户密码：</td><td><sf:password path="password"/><sf:errors path="password"/></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input class="btn btn-primary" type="submit" value="用户更新">
+					</td>
+				</tr>
+			</table>
+		</sf:form>
+	  </div>
   </body>
 </html>
