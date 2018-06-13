@@ -1,5 +1,7 @@
 package shopdemo;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.junit.Test;
@@ -38,16 +40,16 @@ public class UserTest {
 //		userDao.jupdateUser(password, name);
 //	}
 //	
-//	@Test
-//	public void isExits(){
-//		User user = new User();
-//	    String username = "aaa";
-//		user.setPassword("123");
-//		String a = userDao.jisExist(username);
-//		System.out.print(a);
-//		//return a;
-//		
-//	}
+	@Test
+	public void isExits(){
+		User user = new User();
+	    String username = "qqqq";
+		String password = "1111";
+		List<User> l = userDao.isExist(username,password);
+		System.out.print(l);
+		//return a;
+		
+	}
 //	
 //	@Test
 //	public void del(){

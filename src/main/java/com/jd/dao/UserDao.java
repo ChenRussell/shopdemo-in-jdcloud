@@ -1,5 +1,7 @@
 package com.jd.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -17,7 +19,8 @@ public interface UserDao extends JpaRepository<User, Integer>{
 	@Query("update User set password = ?1 where userid = ?2")
 	public int jupdateUser(String password,Integer userid);
 	
-	//判断用户是否存在
-	@Query("select username from User where username = ?1")
-	public String jisExist(String username);
+	
+	@Query("select u from User u where u.username = ?1 and u.password=?2")
+	public List<User> isExist(String username,String password);
+
 }
