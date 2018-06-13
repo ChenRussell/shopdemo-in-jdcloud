@@ -10,6 +10,24 @@ public class Order {
 	private String remark;
 	private int userid;
 	
+	public Order(int orderId, String orderNum, Date time, String produce, String remark, int userid) {
+		this.orderId = orderId;
+		this.orderNum = orderNum;
+		this.time = time;
+		this.produce = produce;
+		this.remark = remark;
+		this.userid = userid;
+	}
+	
+	public Order(String orderNum, Date time, String produce, String remark, int userid) {
+		this.orderNum = orderNum;
+		this.time = time;
+		this.produce = produce;
+		this.remark = remark;
+		this.userid = userid;
+	}
+	
+	
 	public int getOrderId() {
 		return orderId;
 	}
