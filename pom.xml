@@ -83,7 +83,14 @@
         <groupId>org.springframework</groupId>
         <artifactId>spring-test</artifactId>
         <version>4.2.3.RELEASE</version>
-    </dependency>  
+    </dependency>
+
+    <dependency>
+        <groupId>jstl</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+    </dependency>
+
     </dependencies>
 	<build>
 		<plugins>

@@ -10,11 +10,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>用户列表</title>
+
+	  <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
   </head>
   
   <body>
+  <div class="container">
     <a href="user/add">添加用户</a>
-    <table width="700" align="center" border="1">
+    <table class="table" width="700" align="center" border="1">
     	<tr>
     		<td>用户标识</td>
     		<td>用户名</td>
@@ -23,12 +26,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	</tr>
     	<c:forEach items="${users}" var="u">
     		<tr>
-    			<td>${u.value.userid}</td>
-    			<td><a href="user/${u.value.userid}/show">${u.value.username}</a></td>
-    			<td>${u.value.password}</td>
-    			<td><a href="user/${u.value.userid}/update">更新</a>&nbsp;<a href="user/${u.value.userid}/delete">删除</a></td>
+    			<td>${u.userid}</td>
+    			<td><a href="user/${u.userid}/show">${u.username}</a></td>
+    			<td>${u.password}</td>
+    			<td><a href="user/${u.userid}/update">更新</a>&nbsp;<a href="user/${u.userid}/delete">删除</a></td>
     		</tr>
     	</c:forEach>
-    </table> 
+    </table>
+  </div>
   </body>
+
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
 </html>

@@ -1,5 +1,27 @@
 package com.jd.service;
 
-public class UserService {
 
+
+import com.jd.domain.User;
+
+import java.util.List;
+
+public interface UserService {
+
+
+    // find all users
+    public List<User> findUserList();
+
+    // add user
+    public User addUser(User user);
+
+    // findById
+    public User findById(Integer userid);
+
+    // updateById
+    public int updateUserById(String password, Integer userid);
+
+    //delete by id
+
+    public void deleteById(Integer userid);
 }
