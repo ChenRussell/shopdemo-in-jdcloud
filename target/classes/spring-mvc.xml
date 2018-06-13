@@ -11,29 +11,16 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">  
                         
 
-<<<<<<< HEAD
-     <context:component-scan base-package="com.jd.controller;com.jd.exception" />  
-     <mvc:annotation-driven/> 
-    
-    
-=======
-    
- 
->>>>>>> 134223db98984447e37fc767fcc38292966f1a7c
+
     	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     		<property name="prefix" value="/WEB-INF/jsp/"/>
     		<property name="suffix" value=".jsp"/>
     	</bean>
-    
-<<<<<<< HEAD
-                     
 
-                     
-=======
 
-                      <context:component-scan base-package="com.jd.controller;com.jd.exception" />  
-                       <mvc:annotation-driven/> 
->>>>>>> 134223db98984447e37fc767fcc38292966f1a7c
+
+                      <context:component-scan base-package="com.jd;com.jd.exception" />
+                       <mvc:annotation-driven/>
 
     
 </beans>  

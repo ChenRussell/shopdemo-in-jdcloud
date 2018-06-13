@@ -14,8 +14,8 @@ public interface UserDao extends JpaRepository<User, Integer>{
 	//修改密码
 	@Transactional
 	@Modifying
-	@Query("update User set password = ?1 where username = ?2")
-	public int jupdateUser(String password,String username);
+	@Query("update User set password = ?1 where userid = ?2")
+	public int jupdateUser(String password,Integer userid);
 	
 	//判断用户是否存在
 	@Query("select username from User where username = ?1")
