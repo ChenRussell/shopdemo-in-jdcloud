@@ -47,12 +47,7 @@
     </bean>
   
     <!-- DAO接口所在包名，Spring会自动查找其下的类   -->
-<<<<<<< HEAD
-   <!--  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
-        <property name="basePackage" value="com.jd.dao" />  
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>  
-    </bean>   -->
-=======
+
      <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
         <property name="basePackage" value="com.jd.dao" />  
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>  
@@ -80,6 +75,5 @@
     </bean> 
    <!-- 根据事务注解来生成事务代理 -->
     <tx:annotation-driven transaction-manager="transactionManager"/>  
->>>>>>> 2d95b5c5f2f328b3f83c4775c35832c4a143d243
                         
 </beans>

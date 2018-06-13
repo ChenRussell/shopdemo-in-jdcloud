@@ -48,15 +48,15 @@ public class UserController {
 		return "redirect:/user/users";
 	}
 	
-	@RequestMapping(value="/{id}/update",method=RequestMethod.GET)
-	public String update(@PathVariable int id, Model model){
-		String uid = String.valueOf(id);
+	@RequestMapping(value="/{userid}/update",method=RequestMethod.GET)
+	public String update(@PathVariable int userid, Model model){
+		String uid = String.valueOf(userid);
 		model.addAttribute(users.get(uid));
 		return "user/update";
 	}
 	
-	@RequestMapping(value="/{id}/update",method=RequestMethod.POST)
-	public String update(@PathVariable int id, @Validated User user,BindingResult br){
+	@RequestMapping(value="/{userid}/update",method=RequestMethod.POST)
+	public String update(@PathVariable int userid, @Validated User user,BindingResult br){
 		if(br.hasErrors()){
 			return "user/update";
 		}
@@ -65,9 +65,9 @@ public class UserController {
 		return "redirect:/user/users";
 	}
 	
-	@RequestMapping(value="/{id}/delete",method=RequestMethod.GET)
-	public String delete(@PathVariable int id){
-		String uid = String.valueOf(id);
+	@RequestMapping(value="/{userid}/delete",method=RequestMethod.GET)
+	public String delete(@PathVariable int userid){
+		String uid = String.valueOf(userid);
 		users.remove(uid);
 		return "redirect:/user/users";
 	}
