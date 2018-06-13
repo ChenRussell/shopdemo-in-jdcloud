@@ -24,4 +24,7 @@ public interface UserService {
     //delete by id
 
     public void deleteById(Integer userid);
+
+    //login check
+    public boolean checkLogin(User user);
 }
