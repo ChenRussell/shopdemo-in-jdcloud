@@ -39,5 +39,10 @@ public class UserServiceImpl implements UserService {
        userDao.delete(userid);
     }
 
+    @Override
+    public boolean checkLogin(User user) {
+        return false;
+    }
+
 
 }

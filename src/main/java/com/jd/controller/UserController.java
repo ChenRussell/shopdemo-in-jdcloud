@@ -84,5 +84,11 @@ public class UserController {
 		userService.deleteById(userid);
 		return "redirect:/user/users";
 	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(User user){
+
+		return "/login";
+	}
 	
 }
