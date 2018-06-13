@@ -47,11 +47,10 @@
     </bean>
     <!-- DAO接口所在包名，Spring会自动查找其下的类   -->
 
-
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
-        <property name="basePackage" value="com.jd.dao" />  
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>  
-    </bean>   
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.jd.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean>
 
 
 
@@ -67,12 +66,15 @@
                 <property name="databasePlatform" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
             </bean>
        </property>
-      </bean> 
- 
-    <!-- 配置针对JPA的局部事务管理器--> 
+      </bean>
+
+    <!-- 配置针对JPA的局部事务管理器-->
      <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
-    </bean> 
+    </bean>
    <!-- 根据事务注解来生成事务代理 -->
-    <tx:annotation-driven transaction-manager="transactionManager"/>      
-</beans>  
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+</beans>
+
