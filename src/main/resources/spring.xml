@@ -2,6 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"  
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"  
     xmlns:context="http://www.springframework.org/schema/context"  
+     xmlns:jpa="http://www.springframework.org/schema/data/jpa"
     xmlns:tx="http://www.springframework.org/schema/tx"
     xmlns:mvc="http://www.springframework.org/schema/mvc"  
     xsi:schemaLocation="http://www.springframework.org/schema/beans    
@@ -10,9 +11,13 @@
                         http://www.springframework.org/schema/context/spring-context-3.1.xsd  
                         http://www.springframework.org/schema/tx 
                         http://www.springframework.org/schema/tx/spring-tx.xsd  
+                        http://www.springframework.org/schema/data/jpa 
+                        http://www.springframework.org/schema/data/jpa/spring-jpa.xsd 
                         http://www.springframework.org/schema/mvc    
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">  
-                         <!-- 引入配置文件 -->  
+    <!-- jpa -->                   
+    <!-- <jpa:repositories base-package="com.jd"/> -->
+    <!-- 引入配置文件 -->  
     <bean id="propertyConfigurer"  
         class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">  
         <property name="location" value="classpath:jdbc.properties" />  
@@ -41,6 +46,29 @@
     <!-- <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">  
         <property name="basePackage" value="com.jd.dao" />  
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>  
+
     </bean> -->  
+
+
+    <!-- Spring 提供jpa -->
+     <!-- <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="com.jd.domain"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="database" value="MYSQL"/>
+                <property name="generateDdl" value="true"/>
+                <property name="showSql" value="true"/>
+                <property name="databasePlatform" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+            </bean>
+       </property>
+      </bean> -->
+ 
+    <!-- 配置针对JPA的局部事务管理器--> 
+    <!-- <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean> -->
+   <!-- 根据事务注解来生成事务代理 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>  
                         
 </beans>

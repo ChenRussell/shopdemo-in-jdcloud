@@ -23,7 +23,7 @@ select * from s_user
 </select>
 
 <select id="isExist" parameterType="String">
-select * from s_user where username=#{username}
+select username from s_user where username=#{username}
 </select>
 
 </mapper>

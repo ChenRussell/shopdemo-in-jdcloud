@@ -16,6 +16,6 @@ public interface UserMapper {
 		public User findAll();
 		
 		//判断用户是否存在
-		public User isExist(String username);
+		public String isExist(String username);
 
 }
