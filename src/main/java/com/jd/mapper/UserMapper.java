@@ -1,5 +1,7 @@
 package com.jd.mapper;
 
+import java.util.List;
+
 import com.jd.domain.User;
 
 public interface UserMapper {
@@ -13,9 +15,9 @@ public interface UserMapper {
 		public boolean delUser(int userid);
 		
 		//查询用户所有信息
-		public User findAll();
+		public List<User> findAll();
 		
 		//判断用户是否存在
-		public String isExist(String username);
+		public List<User> isExist(String username,String password);
 
 }
