@@ -1,5 +1,6 @@
 package com.jd.domain;
 
+<<<<<<< HEAD
 
 import javax.validation.constraints.Size;
 
@@ -36,6 +37,38 @@ public class User {
 	public String getUsername() {
 		return username;
 	}
+=======
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="s_user")
+public class User {
+	@Id
+	private int userid;
+	private String username;
+	private String password;
+	public int getUserid() {
+		return userid;
+	}
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+>>>>>>> 2d95b5c5f2f328b3f83c4775c35832c4a143d243
 
 	public void setUsername(String username) {
 		this.username = username;

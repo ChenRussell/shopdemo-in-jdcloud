@@ -1,21 +1,23 @@
 package com.jd.dao;
 
+import javax.transaction.Transactional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+
 import com.jd.domain.User;
 
-public interface UserDao {
-	//添加用户
-	public boolean addUser(User user);
+public interface UserDao extends JpaRepository<User, Integer>{
+	//简单增删改查自带
 	
-	//更新用户密码
-	public boolean updateUser(User user);
-	
-	//根据用户id删除用户
-	public boolean delUser(int userid);
-	
-	//查询用户所有信息
-	public User findAll();
+	//修改密码
+	@Transactional
+	@Modifying
+	@Query("update User set password = ?1 where username = ?2")
+	public int jupdateUser(String password,String username);
 	
 	//判断用户是否存在
-	public User isExist(String username);
-
+	@Query("select username from User where username = ?1")
+	public String jisExist(String username);
 }
