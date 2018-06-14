@@ -15,5 +15,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <h1>${exception.message}</h1> <br>
+    <h1>404,页面不存在。。。</h1>
   </body>
 </html>

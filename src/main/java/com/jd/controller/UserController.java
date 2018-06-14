@@ -87,8 +87,9 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(User user){
-
-		return "/login";
+		boolean res = userService.checkLogin(user);
+		if (!res) return "/error_login";
+		else return "redirect:/user/users";
 	}
 	
 }
