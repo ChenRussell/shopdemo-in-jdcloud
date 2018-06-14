@@ -19,17 +19,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <a href="user/add" class="btn btn-primary" style="margin-top: 10px">添加用户</a>
     <table class="table table-striped" align="center" border="1" style="margin-top: 10px">
     	<tr>
-    		<td>用户标识</td>
-    		<td>用户名</td>
-    		<td>用户密码</td>
-    		<td>操作</td>
+    		<td>订单标识</td>
+    		<td>订单编号</td>
+    		<td>下单时间</td>
+    		<td>订单信息</td>
+    		<td>备注</td>
     	</tr>
-    	<c:forEach items="${users}" var="u">
+    	<c:forEach items="${orders}" var="o">
     		<tr>
-    			<td>${u.userid}</td>
-    			<td><a href="order/${u.userid}/orders">${u.username}</a></td>
-    			<td>${u.password}</td>
-    			<td><a href="user/${u.userid}/update">更新</a>&nbsp;<a href="user/${u.userid}/delete">删除</a></td>
+    			<td>${o.orderId}</td>
+    			<td>${o.orderNum}</a></td>
+    			<td>${o.time}</td>
+    			<td>${o.product}</td>
+    			<td>${o.remark}</td>
+    			<td><a href="order/${o.orderId}/delete">删除</a></td>
     		</tr>
     	</c:forEach>
     </table>

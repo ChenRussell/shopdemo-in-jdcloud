@@ -1,7 +1,4 @@
 package com.jd.controller;
-
-
-
 import com.jd.domain.User;
 import com.jd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -91,8 +88,9 @@ public class UserController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String login(User user) {
-
-		return "/login";
+		boolean res = userService.checkLogin(user);
+		if (!res) return "/error_login";
+		else return "redirect:/user/users";
 	}
 
 }

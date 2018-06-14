@@ -41,7 +41,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean checkLogin(User user) {
-        return false;
+
+        List<User> res = userDao.isExist(user.getUsername(), user.getPassword());
+        return res.size() != 0;
+//        return false;
     }
 
 
