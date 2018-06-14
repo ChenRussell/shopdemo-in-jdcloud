@@ -1,4 +1,6 @@
 package com.jd.controller;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.jd.domain.Page;
 import com.jd.domain.User;
 import com.jd.service.UserService;
 
@@ -22,9 +25,13 @@ public class UserController {
 	private UserService userService;
 
 
-	@RequestMapping(value = "/users", method = RequestMethod.GET)
-	public String list(Model model) {
-		model.addAttribute("users", userService.findUserList());
+	@RequestMapping(value = "/users/{currentPage}", method = RequestMethod.GET)
+	public String list(Model model, @PathVariable("currentPage") int currentPage) {
+		List<User> list = userService.findUserList();
+		model.addAttribute("users", list);
+		Page page = new Page();
+		page.setTotalNumber(list.size());
+		page.setCurrentPage(currentPage);
 		return "user/list";
 	}
 

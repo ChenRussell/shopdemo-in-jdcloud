@@ -15,6 +15,17 @@ public class User {
 	private String username;
 
 	private String password;
+	
+	private Page page;
+	
+	public Page getPage() {
+		return page;
+	}
+
+	public void setPage(Page page) {
+		this.page = page;
+	}
+
 	public User(){}
 
 	public User(int userid, String username, String password) {

@@ -33,9 +33,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		</tr>
     	</c:forEach>
     </table>
+    
+    <div class="pagination" id="pagination1"></div>
   </div>
   </body>
 
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="<%=request.getContextPath()%>/js/jqpaginator.min.js"></script>
   <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+  
+  
+  <script type="text/javascript">
+	  $.jqPaginator('#pagination1', {
+	      totalPages: 20,
+	      visiblePages: 5,
+	      currentPage: 3,
+	      first:'<li class="first"><a href="javascript:transCurrentPage(\'1\');">First</a></li>',
+	      prev: '<li class="prev"><a href="javascript:transCurrentPage(\'${page.currentPage - 1}\');">Previous</a></li>',
+       		next: '<li class="next"><a href="javascript:;transCurrentPage(\'${page.currentPage + 1}\');">Next</a></li>',
+        	page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
+        	last:'<li class="first"><a href="javascript:transCurrentPage(\'${page.totalPage}\');">Last</a></li>',
+	      onPageChange: function (num, type) {
+	          $('#p1').text(type + '：' + num);
+	      }
+	  });
+	  
+	  function transCurrentPage(currentPage) {
+<%-- 			Windows.href.location("<%=request.getContextPath()%>/user/users"); --%>
+		}
+  </script>
 </html>
