@@ -1,10 +1,9 @@
 package com.jd.controller;
 
 
+
 import com.jd.domain.User;
-
 import com.jd.service.UserService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +23,8 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
+
+	
 	
 
 

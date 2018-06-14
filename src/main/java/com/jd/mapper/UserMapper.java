@@ -18,6 +18,6 @@ public interface UserMapper {
 		public List<User> findAll();
 		
 		//判断用户是否存在
-		public List<User> isExist(String username,String password);
+		public List<User> isExist(User user);
 
 }
