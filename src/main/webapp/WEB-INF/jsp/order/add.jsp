@@ -29,9 +29,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<tr>
 					<td>订单编号：</td><td><sf:input path="orderNum"/></td>
 				</tr>
-			 	<tr>
-					<td>下单时间：</td><td><input type="date"/></td>
-				</tr> 
+<!-- 			 	<tr> -->
+<!-- 					<td>下单时间：</td><td><input type="date" name="time"></td> -->
+<!-- 				</tr>  -->
 				<tr>
 					<td>订单信息：</td><td><sf:input path="product"/></td>
 				</tr>
