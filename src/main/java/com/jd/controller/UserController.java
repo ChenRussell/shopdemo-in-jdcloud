@@ -1,10 +1,5 @@
 package com.jd.controller;
-
-
-
-import com.jd.domain.User;
-
-import com.jd.service.UserService;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.jd.domain.User;
+import com.jd.service.UserService;
+
 
 @Controller
 @RequestMapping("/user")
@@ -23,7 +21,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	// find all users
+
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	public String list(Model model) {
 		model.addAttribute("users", userService.findUserList());
@@ -69,11 +67,28 @@ public class UserController {
 		return "redirect:/user/users";
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(User user) {
+	@RequestMapping(value = "/checkLogin", method = RequestMethod.POST)
+	public String login(User user, HttpSession session) {
+		
 		boolean res = userService.checkLogin(user);
 		if (!res) return "/error_login";
-		else return "redirect:/user/users";
+		else{
+			// session存储用户登陆信息
+			session.setAttribute("USER-INF", user);
+			
+			return "redirect:/user/users";
+		}
+	}
+	
+	// user初始页面
+	@RequestMapping
+	public String init(){
+		return "login";
+	}
+	
+	@RequestMapping(value="/login", method=RequestMethod.GET)
+	public String login(){
+		return "login";
 	}
 
 }
