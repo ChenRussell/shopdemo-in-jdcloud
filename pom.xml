@@ -60,12 +60,18 @@
  
  
     <!-- MySQL -->
+    
+     <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.11</version>
+        </dependency>
    
-    <dependency>
+   <!--  <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
         <version>5.1.37</version>
-    </dependency>
+    </dependency> -->
     <!-- 解析application -->
     <dependency>
         <groupId>commons-dbcp</groupId>

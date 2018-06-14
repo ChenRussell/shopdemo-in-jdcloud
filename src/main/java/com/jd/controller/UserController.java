@@ -1,12 +1,10 @@
 package com.jd.controller;
 
 
-import java.util.HashMap;
-
-import java.util.Map;
 
 import com.jd.domain.User;
 import com.jd.service.UserService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
