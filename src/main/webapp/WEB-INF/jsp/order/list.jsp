@@ -16,7 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <div class="container">
-    <a href="user/add" class="btn btn-primary" style="margin-top: 10px">添加用户</a>
+  	<a href="order/${userid}/add" class="btn btn-primary" style="margin-top: 10px">下订单</a>
     <table class="table table-striped" align="center" border="1" style="margin-top: 10px">
     	<tr>
     		<td>订单标识</td>
@@ -24,6 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		<td>下单时间</td>
     		<td>订单信息</td>
     		<td>备注</td>
+    		<td>操作</td>
     	</tr>
     	<c:forEach items="${orders}" var="o">
     		<tr>
@@ -32,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			<td>${o.time}</td>
     			<td>${o.product}</td>
     			<td>${o.remark}</td>
-    			<td><a href="order/${o.orderId}/delete">删除</a></td>
+    			<td><a href="order/${o.userId}/${o.orderId}/delete">删除</a></td>
     		</tr>
     	</c:forEach>
     </table>

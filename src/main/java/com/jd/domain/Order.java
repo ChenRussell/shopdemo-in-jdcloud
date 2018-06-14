@@ -48,12 +48,6 @@ public class Order {
 	public void setTime(Date time) {
 		this.time = time;
 	}
-	public String getProduct() {
-		return product;
-	}
-	public void setProduce(String produce) {
-		this.product = produce;
-	}
 	public String getRemark() {
 		return remark;
 	}
@@ -65,6 +59,14 @@ public class Order {
 	}
 	public void setUserid(int userId) {
 		this.userId = userId;
+	}
+	
+	public String getProduct() {
+		return product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
 	}
 
 	@Override
