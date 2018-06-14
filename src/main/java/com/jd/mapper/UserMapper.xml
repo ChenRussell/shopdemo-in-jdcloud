@@ -18,12 +18,12 @@ update s_user set password=#{password} where username=#{username}
 delete from s_user where userid=#{userid}
 </delete>
 
-<select id="findAll">
+<select id="findAll" resultMap="UserMap">
 select * from s_user
 </select>
 
-<select id="isExist" parameterType="String">
-select username from s_user where username=#{username}
+<select id="isExist" parameterType="String" resultMap="UserMap">
+select * from s_user where (username,password)=(#{username},#{password})
 </select>
 
 </mapper>
