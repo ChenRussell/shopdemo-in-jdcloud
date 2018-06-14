@@ -18,8 +18,16 @@
 		update s_order set 
 	</update> -->
 	
-	<delete id="delete" parameterType="int">
+	<delete id="deleteByOrderId" parameterType="int">
 		delete from s_order where orderid=#{orderId}
+	</delete>
+	
+	<delete id="deleteAll">
+		delete from s_order;
+	</delete>
+	
+	<delete id="deleteByUserId" parameterType="int">
+		delete from s_order where user_id=#{userId};
 	</delete>
 	
 	<select id="queryAll" resultMap="baseResultMap">

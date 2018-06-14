@@ -2,12 +2,26 @@ package com.jd.domain;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="s_order")
 public class Order {
+	@Id
+	@Column(name="orderid")
 	private int orderId;
+	@Column(name="ordernum")
 	private String orderNum;
+	@Column(name="ordertime")
 	private Date time;
+	@Column(name="producttime")
 	private String product;
+	@Column(name="remark")
 	private String remark;
+	@Column(name="user_id")
 	private int userId;
 	
 	public Order() {}
