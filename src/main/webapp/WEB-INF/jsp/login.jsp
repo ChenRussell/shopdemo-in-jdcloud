@@ -25,7 +25,7 @@
 
 <div class="container">
 
-    <form class="form-signin" action="<%=request.getContextPath()%>/user/users">
+    <form class="form-signin" action="<%=request.getContextPath()%>/user/login" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="text" id="inputEmail" name="username" class="form-control" placeholder="Email address" required autofocus>
