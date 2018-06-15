@@ -12,6 +12,6 @@ public interface OrderMapper {
 	public boolean deleteAll();
 	public boolean deleteByUserId(int userId);
 	public List<Order> queryAll();
-	public List<Order> queryByUserId(int userId);
+	public List<Order> queryByUserIdByPage(Order order);
 	public Order queryByOrderId(int orderId);
 }

@@ -16,6 +16,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <div class="container">
+  <form action="order/${userid}/orders" id="mainForm2" method="post">
+  	<input type="hidden" name="page.currentPage" id="currentPage2" value="1"/>
+  	<input type="hidden" name="userId" id="userId" value="${userid}"/>
   	<a href="order/${userid}/add" class="btn btn-primary" style="margin-top: 10px">下订单</a>
     <table class="table table-striped" align="center" border="1" style="margin-top: 10px">
     	<tr>
@@ -37,9 +40,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		</tr>
     	</c:forEach>
     </table>
+    </form>
+    <div class="pagination" id="pagination1"></div>
   </div>
+  
   </body>
 
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jqpaginator.min.js"></script>
   <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+  
+  <script type="text/javascript">
+  console.log('${searchParam.page}');
+  
+	  $.jqPaginator('#pagination1', {
+	      totalPages: Number('${searchParam.page.totalPage}'),
+	      visiblePages: Number('${searchParam.page.pageNumber}'),
+	      currentPage: Number('${searchParam.page.currentPage}'),
+	      first:'<li class="first"><a href="javascript:transCurrentPage(1);">First</a></li>',
+	      prev: '<li class="prev"><a href="javascript:transCurrentPage(${searchParam.page.currentPage - 1});">Previous</a></li>',
+       		next: '<li class="next"><a href="javascript:transCurrentPage(${searchParam.page.currentPage + 1});">Next</a></li>',
+        	page: '<li class="page"><a href="javascript:transCurrentPage({{page}});">{{page}}</a></li>',
+        	last:'<li class="first"><a href="javascript:transCurrentPage(${searchParam.page.totalNumber});">Last</a></li>',
+// 	      onPageChange: function (num, type) {
+// 	          $('#p1').text(type + '：' + num);
+// 	      }
+	  });
+	  
+	  function transCurrentPage(currentPage) {
+			console.log("execute once"+ currentPage);
+			$("#currentPage2").val(currentPage);
+			$("#mainForm2").submit();
+		}
+  </script>
 </html>

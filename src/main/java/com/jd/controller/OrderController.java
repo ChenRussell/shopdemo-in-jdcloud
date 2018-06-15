@@ -21,9 +21,11 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	
-	@RequestMapping(value="/{userid}/orders",method=RequestMethod.GET)
-	public String list(@PathVariable int userid,Model model){
-		model.addAttribute("orders", orderService.findOrdersByUserId(userid));
+	@RequestMapping(value="/{userid}/orders")
+	public String list(@PathVariable int userid,Model model, Order order){
+		System.out.println("userid"+order.getUserId());
+		model.addAttribute("orders", orderService.findOrdersByUserId(order));
+		model.addAttribute("searchParam", order);
 		model.addAttribute("userid", userid);
 		return "order/list";
 	}

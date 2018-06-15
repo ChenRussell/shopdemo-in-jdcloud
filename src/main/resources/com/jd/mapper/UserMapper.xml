@@ -18,7 +18,7 @@ update s_user set password=#{password} where username=#{username}
 delete from s_user where userid=#{userid}
 </delete>
 
-<select id="findAll" resultMap="UserMap">
+<select id="findAllByPage" resultMap="UserMap">
 select * from s_user
 </select>
 

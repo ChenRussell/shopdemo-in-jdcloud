@@ -19,8 +19,8 @@ public class OrderServiceImpl implements OrderService {
     OrderMapper orderMapper;
 
     @Override
-    public List<Order> findOrdersByUserId(int userId) {
-        return orderMapper.queryByUserId(userId);
+    public List<Order> findOrdersByUserId(Order order) {
+        return orderMapper.queryByUserIdByPage(order);
     }
 
     @Override

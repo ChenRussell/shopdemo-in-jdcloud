@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.jd.domain.Page;
 import com.jd.domain.User;
 import com.jd.service.UserService;
 
@@ -25,13 +24,11 @@ public class UserController {
 	private UserService userService;
 
 
-	@RequestMapping(value = "/users/{currentPage}", method = RequestMethod.GET)
-	public String list(Model model, @PathVariable("currentPage") int currentPage) {
-		List<User> list = userService.findUserList();
+	@RequestMapping(value = "/users")
+	public String list(Model model, User user) {
+		List<User> list = userService.findUserList(user);
 		model.addAttribute("users", list);
-		Page page = new Page();
-		page.setTotalNumber(list.size());
-		page.setCurrentPage(currentPage);
+		model.addAttribute("searchParam", user);
 		return "user/list";
 	}
 

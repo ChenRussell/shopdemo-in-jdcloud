@@ -10,7 +10,7 @@ import java.util.List;
 public interface OrderService {
 
     // find orders by userid
-    public List<Order> findOrdersByUserId(int userId);
+    public List<Order> findOrdersByUserId(Order order);
 
     // delete order by orderid
     public boolean deleteOrderByOrderId(int orderId);

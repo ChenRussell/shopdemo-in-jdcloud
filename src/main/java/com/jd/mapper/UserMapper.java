@@ -15,7 +15,7 @@ public interface UserMapper {
 		public boolean delUser(int userid);
 		
 		//查询用户所有信息
-		public List<User> findAll();
+		public List<User> findAllByPage(User user);
 		
 		//判断用户是否存在
 		public List<User> isExist(User user);

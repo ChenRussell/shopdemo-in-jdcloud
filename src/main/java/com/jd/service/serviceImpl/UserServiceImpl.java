@@ -1,22 +1,28 @@
 package com.jd.service.serviceImpl;
 
-import com.jd.dao.UserDao;
-import com.jd.domain.User;
-import com.jd.service.UserService;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import com.jd.dao.UserDao;
+import com.jd.domain.User;
+import com.jd.mapper.UserMapper;
+import com.jd.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
     UserDao userDao;
+    
+    @Autowired
+    UserMapper userMapper;
 
     @Override
-    public List<User> findUserList() {
-        List<User> users = userDao.findAll();
+    public List<User> findUserList(User user) {
+//        List<User> users = userDao.findAll();
+    	 List<User> users = userMapper.findAllByPage(user);
         return users;
     }
 

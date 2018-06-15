@@ -10,7 +10,7 @@ public interface UserService {
 
 
     // find all users
-    public List<User> findUserList();
+    public List<User> findUserList(User user);
 
     // add user
     public User addUser(User user);

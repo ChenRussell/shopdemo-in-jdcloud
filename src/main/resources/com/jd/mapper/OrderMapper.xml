@@ -38,7 +38,7 @@
 		select * from s_order where orderid=#{orderId}
 	</select>
 	
-	<select id="queryByUserId" parameterType="int" resultMap="baseResultMap">
+	<select id="queryByUserIdByPage" parameterType="com.jd.domain.Order" resultMap="baseResultMap">
 		select * from s_order where user_id=#{userId}
 	</select>
 

@@ -9,22 +9,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="s_user")
-public class User {
+public class User extends BaseBean{
 	@Id
 	private int userid;
 	private String username;
 
 	private String password;
 	
-	private Page page;
-	
-	public Page getPage() {
-		return page;
-	}
-
-	public void setPage(Page page) {
-		this.page = page;
-	}
 
 	public User(){}
 
